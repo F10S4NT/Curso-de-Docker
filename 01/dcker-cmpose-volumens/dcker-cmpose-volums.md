@@ -1,0 +1,65 @@
+# docker compose volumenes
+
+En nuestro archivo docker-compose.yml agregamos volumens
+
+    version: 
+
+
+
+    services:
+
+        nginx: nginx
+
+            container_name: nginx
+
+            ports:
+        
+                -"80:80"
+            
+
+            volumens: 
+                
+                - ./index/.html/:/usr/nginx/html/index.html
+        
+
+        mysql:
+            
+            image: mysql
+
+            container_name: mysql
+
+            ports:
+
+                -"3306:3306"
+
+            networks: 
+
+                - b0
+
+            environment:
+
+                MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+            volumens:
+
+                - mysql: var/lib/mysql
+
+    networks:
+
+        b0: 
+
+            external: true
+
+
+
+
+    volumens:
+
+
+        mysql: 
+
+listamos volumenes:
+>docker volumen ls
+
+levantamos:
+>docker-compose -d
