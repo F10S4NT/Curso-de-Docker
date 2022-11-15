@@ -44,3 +44,21 @@ Ejecutamos el siguiente comando:
 
 Para constriur ejecutamos y le damos el nombre de ubunto-file-2:
 >docker image build -t ubunto-file-2 .
+
+## Directivas en dockerfile
+
+COPY Solo copia archivos de directorios
+
+ADD copia y puede descomprimir archivos
+
+>COPY ./src/ && touch data.txt
+>
+>ADD file.tar.gz  /com/src
+
+## Variables de entorno 
+
+ejemplo:
+
+ENV => Son reemplazables al momwento de ejecutar
+
+ARG => se ejecuta dentro del dockerfile reemplaza al momento de crear imagen
