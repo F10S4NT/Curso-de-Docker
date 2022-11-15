@@ -55,10 +55,18 @@ ADD copia y puede descomprimir archivos
 >
 >ADD file.tar.gz  /com/src
 
-## Variables de entorno 
+## Variables de entorno
 
 ejemplo:
 
-ENV => Son reemplazables al momwento de ejecutar
+ENV => Son reemplazables al momento de ejecutar
 
-ARG => se ejecuta dentro del dockerfile reemplaza al momento de crear imagen
+ARG => se ejecuta dentro del dockerfile reemplaza al momento de crear la imagen
+
+## Dockerignore
+
+lo que no queremos excliur a no cpoiar a nuestros contenedores en las misma carpeta de
+nuestro dockerfile.
+
+ponemos rutas y tipos de archivos a igmorar.  
+
