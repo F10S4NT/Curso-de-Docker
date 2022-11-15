@@ -10,55 +10,49 @@ generar index.js:
 >
 >app.listen(3000, () => console.log("hola"))
 
-Ejecutaremos el siguiente comando:
-
+Ejecutaremos el siguiente comando para bajar node:
 >docker image pull node
 
-# docker container run --help
+checamos comandos:
+>docker container run --help
 
-# docker run --rm  -w /app -v /home/vagrant/container:/app node
+creamos volumen:
+>docker run --rm  -w /app -v /home/vagrant/container:/app node
 
-# docker run --rm  -w /app -v /home/vagrant/container:/app -it node
+corremos node:
+>docker run --rm  -w /app -v /home/vagrant/container:/app -it node
 
-# docker run --rm  -w /app -v /home/vagrant/container:/app -it node bash
+Abrimos bash:
+>docker run --rm  -w /app -v /home/vagrant/container:/app -it node bash
 
-# docker run --rm  -w /app -v /home/vagrant/container:/app -it node npm init -y
+Iniciamos node:
+>docker run --rm  -w /app -v /home/vagrant/container:/app -it node npm init -y
 
-# docker run --rm  -w /app -v /home/vagrant/container:/app -it node npm install -s express
-
-
-
-
-
-
-generar dockerfile
-
+Instalamos express:
+>docker run --rm  -w /app -v /home/vagrant/container:/app -it node npm install -s express
 
 ----------------------------------------------------------------------
-FROM node
+generamos dockerfile:
 
-WORKDIR /app
+>
+>FROM node
+>
+>WORKDIR /app
+>
+>COPY package.json .
+>
+>Run npm install
+>
+>COPY index.js .
+>
+>CMD ["node","index.js"]
+>
 
-COPY package.json .
+Ahora creamos la imagen con nombre web:
+>docker image build -t web .
 
-Run npm install
+checamos nuestras imagenes:
+>docker image ls
 
-COPY index.js .
-
-CMD ["node","index.js"]
-
-------------------------------------------------------------------------
-
-
-
-
-
-#docker image build -t web .
-
-#docker image ls
-
-
-#docker run -t -p 3000:3000 web
-
-
-
+Corremos nuestra imagen asignando puertos:
+>docker run -t -p 3000:3000 web
