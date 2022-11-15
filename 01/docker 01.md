@@ -88,3 +88,13 @@ ejemplo se usa un arreglo para ejecutar los comandos:
 
 corremos el contenedor:
 >docker container run cmd
+
+## Entrypoint vs CMD
+
+CMD no es la forma correecta, es reemplazable
+ENTRYPOINT no es reemplazable
+
+>ENTRYPOINT ["echo"]
+>
+>CMD ["hola"]
+
