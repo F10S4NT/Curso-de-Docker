@@ -37,4 +37,4 @@ inpseccionamos a red none:
 ejecutamos un bash:
 >docker container execute ubunto bash
 
-necesario net tools
+necesario net tools, lo instalamos
