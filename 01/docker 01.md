@@ -70,3 +70,21 @@ nuestro dockerfile.
 
 ponemos rutas y tipos de archivos a igmorar.  
 
+## Usuarios en docker
+
+Agregar usuario:
+>RUN usseradd -ms /bin/bash cloud_user
+
+usar usuario:
+>USER cloud_user
+
+crear archivo con usuario asignado
+>RUN cd /home/cloud_user/bash  touch data
+
+## Ejecuntando comandos cmd
+
+ejemplo se usa un arreglo para ejecutar los comandos:
+>CMD ["echo","Hola mundo"]
+
+corremos el contenedor:
+>docker container run cmd
